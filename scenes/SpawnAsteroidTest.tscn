@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1yq2qrfvjswc"]
+
+[ext_resource type="Script" path="res://scripts/AsteroidSpawner.gd" id="1_gdggv"]
+
+[node name="SpawnAsteroidTest" type="Node2D"]
+
+[node name="AsteroidSpawner" type="Node2D" parent="."]
+script = ExtResource("1_gdggv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 41.0
+offset_top = 46.0
+offset_right = 234.0
+offset_bottom = 196.0
+text = "Press Spacebar to Spawn an Asteroid"

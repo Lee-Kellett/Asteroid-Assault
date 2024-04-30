@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3bgu1t4psffe"]
+
+[ext_resource type="Texture2D" uid="uid://bbv337rrkjq7u" path="res://placeholders/PH Asteroid.jpg" id="1_b5b3e"]
+[ext_resource type="Script" path="res://scripts/PHAsteroid.gd" id="2_b0f4h"]
+
+[sub_resource type="Curve2D" id="Curve2D_ius37"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 745, -37, 0, 0, 0, 0, 745, 78, 0, 0, 0, 0, 477, 315, 0, 0, 0, 0, 963, 479, 0, 0, 0, 0, 723, 608, 0, 0, 0, 0, 723, 681)
+}
+point_count = 6
+
+[node name="AsteroidPathTest" type="Node2D"]
+
+[node name="PHAsteroid" type="Node2D" parent="."]
+script = ExtResource("2_b0f4h")
+speed = 150
+
+[node name="Path2D" type="Path2D" parent="PHAsteroid"]
+curve = SubResource("Curve2D_ius37")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PHAsteroid/Path2D"]
+position = Vector2(745, -37)
+rotation = 1.5708
+loop = false
+
+[node name="AsteroidSprite" type="Sprite2D" parent="PHAsteroid/Path2D/PathFollow2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_b5b3e")
